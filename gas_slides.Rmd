@@ -1,0 +1,55 @@
+---
+title: "Australian gas markets"
+author: 
+date: 
+output:
+  xaringan::moon_reader:
+    css: ["default", "libs/mjc-css/mjc-theme.css", "libs/mjc-css/mjc-fonts.css"]
+    lib_dir: libs
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo=FALSE, warning=FALSE, message=FALSE, dpi = 300, fig.height = 5)
+
+library(knitr)
+
+source("gas.R")
+
+```
+
+
+# Wallumbilla gas price
+
+``` {r}
+p_p3$Wallumbilla
+```
+
+---
+
+# East Australian gas prices
+
+``` {r}
+grid.arrange(p_aust$Brisbane + scale_color_manual(values = c("#2166ac", "grey")), p_aust$Sydney, p_aust$Victoria, p_aust$Adelaide + scale_color_manual(values = c("#2166ac", "grey")), ncol = 2)
+```
+
+
+---
+
+# International gas prices
+
+``` {r}
+grid.arrange(p_p3[[10]], p_p3[[11]], p_p3[[13]], p_p3[[12]], ncol = 2)
+```
+
+---
+
+# The price advantage has shifted north
+
+``` {r}
+grid.arrange(p_gap$vic_bris, p_gap$adl_bris, p_gap$syd_bris, p_gap$vic_asia, ncol = 2)
+```
+
+
+
+
